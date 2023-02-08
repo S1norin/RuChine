@@ -12,19 +12,18 @@ for i in Glossary:
 import requests
 from bs4 import BeautifulSoup
 
-while True:
-    output = []
-    soup = BeautifulSoup(requests.get(f"https://ruwordnet.ru/ru/search/Боль").text, 'html.parser')
-    soup.head.clear()
-    print((soup.find("div", class_="sense").find_all("div", class_="sense")))
-    result = soup.find("div", class_="sense").find_all("div", class_="sense")
-    print(result)
-    print("***************************************************************************")
-    print("------------------------------------")
-    for i in result:
-        if i.get_text(strip=True).endswith(","):
-            output.append(i.get_text(strip=True)[:-1])
-            continue
-        output.append(i.get_text(strip=True))
-    print(output)
-    soup.find("div", class_="sense").nextSibling
+output = []
+soup = BeautifulSoup(requests.get(f"https://ruwordnet.ru/ru/search/Боль").text, 'html.parser')
+soup.head.clear()
+print((soup.find("div", class_="sense").find_all("div", class_="sense")))
+result = soup.find("div", class_="sense").find_all("div", class_="sense")
+print(result)
+print("***************************************************************************")
+print("------------------------------------")
+for i in result:
+    if i.get_text(strip=True).endswith(","):
+        output.append(i.get_text(strip=True)[:-1])
+        continue
+    output.append(i.get_text(strip=True))
+print(output)
+soup.find("div", class_="sense").nextSibling
