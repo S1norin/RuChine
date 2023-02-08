@@ -27,3 +27,9 @@ for i in result:
     output.append(i.get_text(strip=True))
 print(output)
 soup.find("div", class_="sense").nextSibling
+
+
+
+
+
+jkljkjkljekljqklfjakljfklalj
