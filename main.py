@@ -9,7 +9,7 @@ Glossary = "ROOT, acl, advcl, advmod, amod, appos, aux, case, cc, ccomp, compoun
 for i in Glossary:
     print(i, "-", spacy.explain(i))
 '''
-import requests
+'''import requests
 from bs4 import BeautifulSoup
 
 
@@ -31,3 +31,25 @@ for j in soup.find("div", class_="sense"):
     counter += 1
     print(counter)
     soup.nextsibling
+'''
+
+import requests
+from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(requests.get(f"https://ruwordnet.ru/ru/search/Боль").text, 'html.parser')
+soup.head.clear()
+counter = 0
+
+for j in soup.find("div", class_="sense").next_elements:
+    #    print((soup.find("div", class_="sense").find_all("div", class_="sense")))
+    j = BeautifulSoup(j, 'html.parser')
+    result = j.get_text(strip=True).strip(",")
+    print(result)
+print("***************************************************************************")
+print("------------------------------------")
+'''    for i in result:
+        output.append(i.get_text(strip=True).strip(","))
+    print(output)
+    counter += 1
+    print(counter)
+'''
