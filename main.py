@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from nltk.stem import WordNetLemmatizer
+from nltk.stem import WordNetLemmatizer # это пока лишнее
 
 user_input = input()
 soup = BeautifulSoup(requests.get(f"https://ruwordnet.ru/ru/search/{user_input}").text, 'html.parser')
