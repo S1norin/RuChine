@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-user_input = 'Станция'
+user_input = input()
 soup = BeautifulSoup(requests.get(f"https://ruwordnet.ru/ru/search/{user_input}").text, 'html.parser')
 soup.head.clear()
 counter = 0
