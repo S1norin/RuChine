@@ -2,7 +2,7 @@ import requests
 import json
 import csv
 
-IAM_TOKEN = 't1.9euelZqdz52KjZ6TzcjMkIqPjseUne3rnpWajZaXjJvNksqLjsadycaVmpTl9PcpQXdZ-e9ZSk-K3fT3aW90WfnvWUpPis3n9euelZqLx5GZnIvJjpHMx5aQyovOyO_8xeuelZqLx5GZnIvJjpHMx5aQyovOyA.2fggj-PCEjrrMCoWpBeVxXNl-EN-wQaKumtBHxyybEnPmkCtfBNF8qGqlOgoLsbjqPIJeYVNLX8srQ6RyiofDQ'
+IAM_TOKEN = ''
 folder_id = 'b1g2niaicl9kdmfrn5r4'
 target_language = 'ru'
 oleg = requests.get(f'https://ruscorpora.ru/ru/api/export?query=%7B%22params%22%3A%7B%22pageParams%22%3A%7B%22page%22%3A%220%22%2C%22docsPerPage%22%3A%2210%22%2C%22snippetsPerPage%22%3A%2250%22%2C%22snippetsPerDoc%22%3A%220%22%7D%2C%22sampling%22%3A%220%22%2C%22noDiacritic%22%3Atrue%2C%22format%22%3A%22csv%22%7D%2C%22corpus%22%3A%7B%22type%22%3A%22PARA%22%2C%22lang%22%3A%22eng%22%7D%2C%22resultType%22%3A%5B%22CONCORDANCE%22%5D%2C%22exactForm%22%3A%7B%22sectionValues%22%3A%5B%7B%22conditionValues%22%3A%5B%7B%22fieldName%22%3A%22req%22%2C%22text%22%3A%7B%22v%22%3A%22{input()}%22%7D%7D%5D%7D%5D%7D%7D')
