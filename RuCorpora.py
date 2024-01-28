@@ -33,31 +33,8 @@ for row in request_result:
 
 
 
-'''response_json = json.loads(response.text)
+response_json = json.loads(response.text)
 translations = response_json['translations']
 translated_texts = [t['text'] for t in translations]
 
-print(translated_texts)'''
-
-'''def update_found_list(words):
-    for word in words:
-        if word not in found:
-            found.add(word)  # Проверка дупликатов в текущей итерации
-
-
-# user_input = [sentence.strip() for sentence in stdin]
-user_input = [
-    "А если серьёзно, то я тут не вижу в реплике Сумики ничего, что действительно оправдывало бы выбор не самого простого для произношения в стрессовой ситуации словосочетания не обязан"]
-output = ["oleg", "petr"]
-synonyms = {}
-
-
-oleg = score(user_input * 2, user_input * 2,  lang="ru", verbose=True)
-print(oleg, oleg[0], oleg[1], oleg[2])
-r, i, f, j = oleg[0], oleg[1], oleg[2], output
-for a, b in oleg[2], output:
-    print(a, b)
-
-
-print(synonyms)
-'''
+print(translated_texts)
